@@ -301,10 +301,16 @@
   }
 
   /* ---------- Apple 健康同步 ---------- */
+  /* 传给快捷指令的内容 = 本次训练的分钟数（整数），快捷指令只需一个「记录体能训练」动作 */
+  function buildMinutes() {
+    if (!state.sessionStart || !state.sessionEnd) return 0;
+    var ms = new Date(state.sessionEnd) - new Date(state.sessionStart);
+    return Math.max(1, Math.round(ms / 60000));
+  }
+
   function buildShortcutUrl() {
-    var st = new Date(state.sessionStart), en = new Date(state.sessionEnd);
-    var text = encodeURIComponent(fmtStamp(st) + " " + fmtStamp(en));
-    return "shortcuts://run-shortcut?name=" + encodeURIComponent(DATA.shortcutName) + "&input=text&text=" + text;
+    return "shortcuts://run-shortcut?name=" + encodeURIComponent(DATA.shortcutName) +
+      "&input=text&text=" + encodeURIComponent(String(buildMinutes()));
   }
 
   function openSyncModal() {
@@ -313,7 +319,7 @@
       return;
     }
     var url = buildShortcutUrl();
-    $("syncPreview").textContent = url;
+    $("syncPreview").textContent = "本次训练 " + buildMinutes() + " 分钟 · " + url;
     $("modal").classList.add("open");
 
     // 桌面：优先尝试用二维码库渲染，失败则给出链接
