@@ -405,6 +405,18 @@
     syncGo.style.width = "100%";
     syncGo.onclick = doSync;
     document.querySelector("#modal .modal-actions").after(syncGo);
+
+    // 测试入口：不依赖真实训练，直接用 5 分钟测试数据跑一遍快捷指令
+    var testGo = document.createElement("button");
+    testGo.className = "btn btn-line";
+    testGo.textContent = "测试：用 5 分钟测试数据试跑一次";
+    testGo.style.width = "100%";
+    testGo.style.marginTop = "8px";
+    testGo.onclick = function () {
+      window.location.href = "shortcuts://run-shortcut?name=" +
+        encodeURIComponent(DATA.shortcutName) + "&input=text&text=5";
+    };
+    document.querySelector("#modal .modal-card").appendChild(testGo);
   }
 
   /* ---------- 启动 ---------- */
