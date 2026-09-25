@@ -1,7 +1,7 @@
 /* 数据：一周训练计划 · 增肌定制 2kg/4kg · 膝盖友好 */
 /* 每天分上肢 / 下肢两块，每块 3 个动作，每个动作最多 3 轮 → 全天 18 组 */
 
-const TRAINING_DATA = {
+var TRAINING_DATA = {
   days: [
     {
       key: "mon",
