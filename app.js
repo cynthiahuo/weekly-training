@@ -2,7 +2,12 @@
 (function () {
   "use strict";
 
-  var DATA = window.TRAINING_DATA;
+  var DATA = window.TRAINING_DATA || (typeof TRAINING_DATA !== "undefined" ? TRAINING_DATA : null);
+  if (!DATA || !DATA.days) {
+    document.body.insertAdjacentHTML("afterbegin",
+      '<p style="padding:16px;color:#c0492f;font-size:14px">数据加载失败：请确认 data.js 已正确加载。</p>');
+    return;
+  }
   var LS_STATE = "wt_state_v1";
   var LS_HISTORY = "wt_history_v1";
 
