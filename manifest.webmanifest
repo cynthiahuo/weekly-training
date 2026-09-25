@@ -1,0 +1,13 @@
+{
+  "name": "一周训练 · 增肌定制",
+  "short_name": "一周训练",
+  "description": "增肌周计划 · 2kg/4kg 哑铃 · 膝盖友好 · 可同步 Apple 健康",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f6f4",
+  "theme_color": "#0f6e56",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
