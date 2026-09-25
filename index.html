@@ -75,7 +75,7 @@
   <div class="modal" id="modal">
     <div class="modal-card">
       <h3>同步到 Apple 健康</h3>
-      <p>手机上点「打开」运行快捷指令「记训练」即可把本次训练写入体能训练（传统力量训练）。<br />桌面预览可用相机扫下面的码。</p>
+      <p>手机上点「打开」运行快捷指令「记训练」，即可把本次训练写入体能训练（传统力量训练 · 时长与卡路里自动带入）。<br />桌面预览可用相机扫下面的码。</p>
       <canvas id="qrCanvas" width="220" height="220"></canvas>
       <div class="modal-actions">
         <button class="btn btn-line" id="btnCopyLink">复制链接</button>
@@ -95,8 +95,13 @@
         4. 分享到主屏幕后可离线使用（数据存在本机）。
       </p>
       <p>
-        <b>Apple 健康</b>：iPhone 需先建好快捷指令「记训练」（只需 1 个动作：记录体能训练，持续时间＝快捷指令输入）。
-        详见部署文档。
+        <b>Apple 健康 · 首次设置</b>：iPhone 需先安装快捷指令「记训练」。<br />
+        <a href="jixunlian.shortcut" style="color:#0f6e56;font-weight:600">⬇ 点此下载快捷指令文件</a>
+        （下载后到「文件」App 里点一下即可添加）
+      </p>
+      <p style="font-size:11.5px;color:#8a877c">
+        注意：动作里 <b>类型 / 持续时间 / 大卡 / 距离</b> 四项都不能留空；<br />
+        「大卡」若显示灰色 400 只是占位示例，建议填 0 或你自己的估算值。
       </p>
       <button class="btn btn-primary" id="modalTipsClose">知道了</button>
     </div>
